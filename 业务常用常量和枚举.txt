@@ -1,0 +1,29 @@
+
+com.shuframework.commonbase.constant
+	CommonConstant	通用yes/no
+	
+com.shuframework.commoncore.base
+	BaseDTO  分页查询条件+常用条件
+	
+	
+state 和 status 的区别
+	枚举类型，可数，数量有限的状态一般用state; 不可数，不确定的状态用status
+	readyState -- 就那么四五种值
+	statusText -- 描述性的文字，可以任意
+	
+常用业务的枚举	
+	审核状态 AuditingStateEnum
+	归属类型 BelongTypeEnum
+	客户端类型 ClientTypeEnum
+	用户来源类型 UserFromTypeEnum
+	使用状态 UsingStateEnum
+		如：合同的使用状态
+	
+支付相关的枚举
+	
+	
+	
+	Creation type		创建型
+	Structural type		结构型
+	Behavior type		行为型
+	

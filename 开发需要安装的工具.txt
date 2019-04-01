@@ -1,0 +1,26 @@
+
+jdk8
+maven3
+idea
+git  smartgit
+mysql 5.7  
+	客户端 navicat
+redisclient
+
+postman
+Typora
+xshell 5
+PowerDesigner15
+文件对比器 
+TeamViewer13
+
+谷歌浏览器
+搜狗输入法
+钉钉
+微信pc
+zip
+notepad++
+wps/office
+金山pdf
+百度网盘
+有道笔记

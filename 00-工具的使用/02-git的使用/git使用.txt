@@ -1,0 +1,8 @@
+
+git ignore  配置路径的格式
+
+
+
+smartGit 需要注册的解决方式删除settings.xml文件
+    C:\Users\Administrator\AppData\Roaming\syntevo\SmartGit\18.1\settings.xml
+

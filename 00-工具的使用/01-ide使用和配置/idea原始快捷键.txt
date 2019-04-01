@@ -1,0 +1,37 @@
+
+查找接口的实现类： Ctrl + Alt + B
+
+查看类或接口的继承关系：Ctrl + h
+
+代码大小写切换：ctr + Shift + u
+
+复制一行：Ctrl + d
+
+剪切一行：Ctrl + x  Ctrl+v是可以复制改行内容的
+删除一行：Ctrl + y
+
+查找： Ctrl + F
+替换： Ctrl + R
+全局查找： Ctrl + Shift + R
+
+生成测试类： Ctrl + Shift + T
+
+上一步：Ctrl + Alt + 左右 方向键
+
+Ctrl + Alt + V，可以引入变量。例如：new String(); 自动导入变量定义
+Ctrl + Alt + O(字母)，自动修正包，同时配置自动导入包（auto import）
+
+Shift + F6，重命名（变量名或 文件名）
+
+抽取方法：Ctrl + Alt + M
+
+移动一行：Ctrl + Shift + ↑/↓  或者  Alt + Shift + ↑/↓
+
+override方法  Ctrl + O(字母)
+
+
+=====修改快捷键提示为Alt + / 的步骤：
+Setting --> keymap 打开页面
+ Main menu --> Code --> Completion --> Basic
+1. 移除原来的Cycle Expand Word 的 Alt+/ 快捷键绑定。 
+2. 在 Basic 上点击右键,去除原来的 Ctrl+空格 绑定,然后添加 Alt+/ 快捷键。

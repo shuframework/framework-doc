@@ -1,0 +1,31 @@
+
+提高自己水平的方法很简单，就是把大部分时间去了解实现原理，了解思想，让自己的知识串起来，形成体系。
+j2ee的知识特别多，学得人想哭，千万不要一开始把时间花在各种框架、组件的使用上，在我看来那是本末倒置。简单来说：先修内功再练招式。
+工作会用得到的知识就是一个请求从前台到后台处理的过程需要用到的东西，最少包括以下点：js，html，css，ajax，ajax跨域，跨站脚本，web缓存，web优化，nginx，apache作用，鉴权方式，cookie，session，servlet，filter，基本数据结构，线程池，线程并发，缓存，io等等，知识点非常多。
+
+技术需要3-5年更新一遍
+
+自我实现框架的目标  【依赖了common-base的二方jar (底层是没有依赖任何三方jar) 】
+	mywheel-orm			mybatis
+	
+	mywheel-mvc			springmvc
+	
+	mywheel-spring		spring
+		自我实现 spring的ioc、aop功能
+		
+	mywheel-shiro		shiro（安全框架）
+	
+	mywheel-rpc			dubbo（rpc框架）
+	
+	mywheel-mq			rabbitmq（mq框架）
+	
+	注解实现 数据脱敏
+		https://blog.csdn.net/huyuyang6688/article/details/77759844
+	
+	图片上传 方法单独提出，不用每次通过form传入	
+	
+	
+=============== 框架原理 ===============
+mywheel-mvc
+	DispatcherServlet
+	ModelAndView(View)

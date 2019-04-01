@@ -1,0 +1,18 @@
+
+-- 连表更新
+update game_center.login_log t1 set channel = 
+(
+	select tmp.user_channel from (
+		select u.user_id, u.user_channel, log.id from game_center.login_log log
+		inner JOIN (select user_id,user_channel from paladin_push.`user` where user_channel is not null) u 
+		on u.user_id = log.user_id
+	) tmp where tmp.id = t1.id 
+)
+
+update game_center.login_log set channel = 'pgy' where channel = 'test';
+
+
+-- 修改字段
+alter table game_center.advert change content `img_size` char(1) DEFAULT NULL COMMENT '图片大小 1大图 2左图 3右图';
+-- 添加字段
+alter table game_center.advert add `content_type` char(1) DEFAULT NULL COMMENT '类型 1文章 2外链 3邀请好友 4春节活动 5游戏详情 6游戏合辑';
