@@ -12,6 +12,11 @@ update game_center.login_log t1 set channel =
 update game_center.login_log set channel = 'pgy' where channel = 'test';
 
 
+-- 将一个表的数据插入另一个表
+insert into 需要插入的表 (字段)
+select 字段 from 数据源头表
+
+
 -- 修改字段
 alter table game_center.advert change content `img_size` char(1) DEFAULT NULL COMMENT '图片大小 1大图 2左图 3右图';
 -- 添加字段
