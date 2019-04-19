@@ -24,6 +24,8 @@
 
 ## 1. StringUtil工具类
 
+**String 、StringBuild、StringBuffer都用final 修饰了，即不可变性、不可继承**
+
 String 的常用方法有  equals，charAt，indexOf，substring，contains，startsWith，endsWith，toLowerCase，toUpperCase，replace，trim，compareTo
 
 ### 1.1 获得后缀
@@ -126,5 +128,13 @@ Date getLastDayOfMonth(int specifiedMonth)
 
 
 
+## 包装类
 
+包装类中的数值类型都继承 java.lang.Number
+
+不可变性 都用final 修饰了，即不能被继承。
+
+设计为 不可变的类 是为了防止数据意外被串改，以及多线程环境下安全。
+
+包装类的 valueOf() 方法有缓存值，建议使用该方法创建，这样共享的设计模式是 享元模式。
 
