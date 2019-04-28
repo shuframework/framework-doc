@@ -1,3 +1,14 @@
 
-char/varchar 类型的比较都是按位数顺序来比较的，即char(1) 直接使用比较符号( >、<)是没问题的;最好是 cast(type as unsigned int) 进行类型转换。
- 
+char/varchar 类型的比较都是按位数顺序来比较的，即char(1) 直接使用比较符号( >、<)是没问题的;
+最好是 cast(type as unsigned int) 进行类型转换。
+
+
+status	varchar  状态 如订单状态
+enabled	char  1可用 0禁用 2删除
+
+
+只需要精确到小数点后7位，精度就是1CM 即 decimal(12,7) 如 -123.4567899 度
+
+还有一种是 double(10,6) 这样的精度没decimal(12,7)高
+
+ lat 和 lng 属性指定为大小是 double(10,6) ，这些字段将会存储小数点后 6 位数以及小数点前最多 4 位数，如 -123.456789 度 
