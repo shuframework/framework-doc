@@ -1,0 +1,7 @@
+
+（1）ssh-keygen -t rsa -C "邮箱"  如ssh-keygen -t rsa -C "shuhengzhuxiang@163.com"
+（2）然后一路回车，得到一个加密后的结果
+（3）然后打开~/.ssh/id_rsa.pub文件(~表示用户目录，比如我的windows就是C:\Users\Administrator)，复制其中的全部内容
+
+https://www.cnblogs.com/hafiz/p/8146324.html
+

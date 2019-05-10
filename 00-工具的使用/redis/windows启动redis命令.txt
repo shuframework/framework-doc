@@ -1,0 +1,9 @@
+
+win7
+	（1）shift + 右键  打开管理员窗口
+	（2）redis-server.exe redis.windows.conf
+	
+
+win10
+	（1）shift + 右键  打开powershell窗口
+	（2）.\redis-server.exe redis.windows.conf
