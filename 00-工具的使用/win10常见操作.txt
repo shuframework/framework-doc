@@ -1,0 +1,3 @@
+
+修改host文件
+    位置 C:\Windows\System32\drivers\etc

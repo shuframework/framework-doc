@@ -1,0 +1,16 @@
+
+common-base		jdk的常用封装
+framework-common	第三方的常用封装和业务部分
+
+framework-doc	笔记
+
+
+mywheel-*	自我实现的框架
+
+
+
+=======================
+
+shuxiaoxiao/shu-jdk 和 shuxiaoxiao/shu-core 代码都移植到 shuframework/common-base 和shuframework/framework-common
+
+shuxiaoxiao/doc 移植到 shuframework/doc
