@@ -7,12 +7,12 @@
 ```
 <insert id="insertBatch"  parameterType="java.util.List">
     INSERT INTO game_server (`server_name`,game_id,opening_time,create_time,update_time) values
-    <foreach collection ="list" item="item" index= "index" separator =",">
-        (   #{item.serverName,jdbcType=BIGINT},
-        #{item.gameId,jdbcType=BIGINT},
-        #{item.openingTime,jdbcType=TIMESTAMP},
-        #{item.createTime,jdbcType=TIMESTAMP},
-        #{item.updateTime,jdbcType=TIMESTAMP})
+    <foreach collection ="list" item="item" index= "index" open="(" close=")" separator =",">
+		#{item.serverName},
+        #{item.gameId},
+        #{item.openingTime},
+        #{item.createTime},
+        #{item.updateTime}
     </foreach >
 </insert>
 ```
@@ -29,6 +29,26 @@
         #{item}
     </foreach>
 </update>
+```
+
+第二种是不同记录，不同值的批量更新 多条一起执行，类似于有缓存
+
+```
+    <update id="batchUpdate" parameterType="java.util.Map">
+        <!-- 接收list参数，循环着组装sql语句，注意for循环的写法
+             separator=";" 代表着每次循环完，在sql后面放一个分号
+             item="cus" 循环List的每条的结果集
+             collection="list" list 即为 map传过来的参数key -->
+        <foreach collection="list" separator=";" item="cus">
+            update t_customer set
+            c_name = #{cus.name},
+            c_age = #{cus.age},
+            c_sex = #{cus.sex},
+            c_ceroNo = #{cus.ceroNo},
+            c_ceroType = #{cus.ceroType}
+            where id = #{cus.id}
+        </foreach>
+    </update>
 ```
 
 

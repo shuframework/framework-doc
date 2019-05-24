@@ -37,6 +37,7 @@
     <type>pom</type>
 </dependency>
 
+
 <!-- 
 <dependency>
     <groupId>org.springframework.cloud</groupId>
@@ -45,3 +46,8 @@
 </dependency>
  -->
 
+
+        <dependency>
+            <groupId>com.baomidou</groupId>
+            <artifactId>mybatis-plus-boot-starter</artifactId>
+        </dependency>
