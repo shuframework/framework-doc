@@ -7,19 +7,38 @@
 ```
 <insert id="insertBatch"  parameterType="java.util.List">
     INSERT INTO game_server (`server_name`,game_id,opening_time,create_time,update_time) values
+    <foreach collection ="list" item="item" separator =",">
+		( #{item.serverName},
+        #{item.gameId},
+        #{item.openingTime},
+        #{item.createTime},
+        #{item.updateTime} )
+    </foreach>
+</insert>
+```
+
+打印的sql是 INSERT INTO 表名 values (值1，值2), (), ()
+
+```
+这样处理会有问题
+<insert id="insertBatch"  parameterType="java.util.List">
+    INSERT INTO game_server (`server_name`,game_id,opening_time,create_time,update_time) values
     <foreach collection ="list" item="item" index= "index" open="(" close=")" separator =",">
 		#{item.serverName},
         #{item.gameId},
         #{item.openingTime},
         #{item.createTime},
         #{item.updateTime}
-    </foreach >
+    </foreach>
 </insert>
+打印的sql是 INSERT INTO 表名 values (值1，值2, 值1，值2)
 ```
 
 
 
 ### 1.2 update（批量修改）
+
+第一种是不同记录，固定值的批量更新
 
 ```
 <update id="updateBatch" parameterType="java.util.Map">

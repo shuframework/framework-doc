@@ -1,0 +1,23 @@
+
+秒杀场景 
+
+rpc  dubbo
+	zookeeper(注册和调度中心)
+
+docker容器
+	
+	安装完成后 cmd 里面输入"docker"，检查是否安装成功 
+
+springboot
+	基本语法
+	整合mybatis、redis、mq
+	自定义starter
+
+redis实现分布式锁
+
+mq消息中间件  解耦
+	queue（点对点模式）
+	topic（订阅模式）
+
+高并发测试 jmeter	
+

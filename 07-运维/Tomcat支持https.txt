@@ -1,0 +1,13 @@
+
+修改 tomcat/conf/server.xml文件
+<Connector port="443" protocol="org.apache.coyote.http11.Http11NioProtocol"
+		   maxThreads="150" SSLEnabled="true" scheme="https" secure="true">
+	<SSLHostConfig>
+		<Certificate certificateKeystoreFile="/usr/local/java/tomcat/conf/cert/2379110_www.v-liao.com.pfx"
+					 certificateKeystoreType="PKCS12" certificateKeystorePassword="kS6nzj5F" />
+	</SSLHostConfig>
+</Connector>
+
+说明：
+	/cert/xx.pfx  是申请的ssl证书
+	port="443" 表示 https的端口，https的默认端口是443

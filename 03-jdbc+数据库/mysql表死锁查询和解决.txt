@@ -1,0 +1,7 @@
+
+-- 查看那些表锁到了
+show OPEN TABLES where In_use > 0;
+-- 查看进程号
+show processlist;
+
+kill id值;  -- 如 kill 123;

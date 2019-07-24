@@ -8,9 +8,17 @@ framework-doc	笔记
 mywheel-*	自我实现的框架
 
 
+架构设计与工程效率、技术变现、中小研发团队能力提升
+
+
+有规划的人生是蓝图，没规划的人生是拼图；有目标的人生叫航行，没目标的人生叫流浪！
 
 =======================
 
 shuxiaoxiao/shu-jdk 和 shuxiaoxiao/shu-core 代码都移植到 shuframework/common-base 和shuframework/framework-common
 
 shuxiaoxiao/doc 移植到 shuframework/doc
+
+
+
+不同业务一个异常，设置异常信息，然后全局异常拦截，不用每个请求进行try-catch

@@ -1,0 +1,42 @@
+
+注意：在阿里云里有些安全策略，需要开发6379端口，不然外网ip 连接不上
+资料 https://www.cnblogs.com/teamemory/p/9482475.html
+
+
+0、查询是否安装过redis
+	ps -ef|grep redis
+
+进入需要安装的目录，redis版本根据实际情况来选择
+1.获取redis资源
+	wget http://download.redis.io/releases/redis-4.0.8.tar.gz
+	
+2.解压
+　　tar xzvf redis-4.0.8.tar.gz
+
+3.安装
+　　cd redis-4.0.8
+　　make
+	
+4.修改配置，修改以下几处
+
+#注释以下绑定IP，允许所有的IP可访问，也可绑定指定外网IP
+#bind 127.0.0.1
+
+#开启保护模式
+protected-mode yes
+
+#开启后台运行
+daemonize yes
+
+# requirepass foobared
+#设置认证密码
+requirepass im123456
+
+
+5、启动
+	#进入redis服务，见步骤3
+	src/redis-server redis.conf  #启动redis
+
+6、测试访问（前提是进入 redis服务，见步骤3）
+
+	src/redis-cli -h 39.104.171.26 -p 6379 -a im123456  #根据外网ip和redis密码 测试登录

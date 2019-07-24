@@ -1,0 +1,6 @@
+
+Windows 版本
+	https://github.com/microsoftarchive/redis/releases/
+	
+Linux 版本
+	http://download.redis.io/releases/

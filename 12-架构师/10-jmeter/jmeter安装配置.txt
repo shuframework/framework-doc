@@ -1,0 +1,5 @@
+
+1、进入 Apache jmeter 官网 download，如Windows系统是apache-jmeter-5.1.1.zip
+2、解压，然后和配置maven一样加上 jmeter的配置
+3、cmd -- jmeter 
+	开启页面，可以在options里面切换 语言
