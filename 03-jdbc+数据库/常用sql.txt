@@ -25,3 +25,25 @@ alter table advert change content `img_size` char(1) DEFAULT NULL COMMENT '图�
 
 -- 添加字段
 alter table advert add `content_type` char(1) DEFAULT NULL COMMENT '类型 1文章 2外链 3邀请好友 4春节活动 5游戏详情 6游戏合辑';
+
+
+-- 根据不同状态值 进行排序
+例子：状态1在前，且状态1（进行中） 按操作时间 升序，状态2（已完成）按操作时间 降序
+select *
+FROM apply_log
+WHERE 1=1 
+ORDER BY status asc,
+	case when status = 2 then ope_time end desc,
+	case when status = 1 then ope_time end
+LIMIT 0,1000;
+
+-- 状态不能排序时先翻译 进行排序，然后根据不同值，选择不同的排序顺序
+select *
+FROM t_pay_transfer_info
+WHERE 1=1 
+ORDER BY 
+	case when status = 'wait_audit' then 0 ELSE 1 end ,
+status asc,
+ case when status != 'wait_audit' then create_time end desc,
+	case when status = 'wait_audit' then create_time end
+ LIMIT 0,200;

@@ -8,10 +8,6 @@ docker容器
 	
 	安装完成后 cmd 里面输入"docker"，检查是否安装成功 
 
-springboot
-	基本语法
-	整合mybatis、redis、mq
-	自定义starter
 
 redis实现分布式锁
 
@@ -21,3 +17,27 @@ mq消息中间件  解耦
 
 高并发测试 jmeter	
 
+
+========== springboot ==========
+
+	基本语法
+	整合mybatis、redis、mq
+	自定义starter
+
+
+
+========== 微服务 ==========
+
+服务发现（注册中心）
+	eureka 1.x
+	
+	consul
+	
+	
+服务治理
+
+
+网关层
+	zuul
+	
+	gateway

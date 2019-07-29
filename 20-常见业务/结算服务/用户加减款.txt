@@ -1,0 +1,57 @@
+
+加款接口 包含加款流水
+减款接口 包含减款流水
+
+转账接口
+	组合 加款和减款
+	
+	
+表设计
+t_user
+
+
+
+CREATE TABLE `t_account` (
+  `id` bigint(16) NOT NULL AUTO_INCREMENT COMMENT '资金账户ID',
+  `user_id` bigint(16) DEFAULT NULL COMMENT '用户ID',
+  `account_amount` decimal(16,2) DEFAULT NULL COMMENT '账户总金额',
+  `available_amount` decimal(16,2) DEFAULT NULL COMMENT '可用金额',
+  `freeze_amount` decimal(16,2) DEFAULT NULL COMMENT '冻结金额',
+  `amount_flow_count` int(6) DEFAULT NULL COMMENT '资金流量笔数',
+  `charge_amount` decimal(16,2) DEFAULT NULL COMMENT '充值金额',
+  `pay_amount` decimal(16,2) DEFAULT NULL COMMENT '付款金额',
+  `refund_amount` decimal(16,2) DEFAULT NULL COMMENT '退款金额',
+  `deposit_amount` decimal(16,2) DEFAULT NULL COMMENT '提现金额',
+  `charge_count` int(10) DEFAULT NULL COMMENT '充值笔数',
+  `pay_count` int(10) DEFAULT NULL COMMENT '支付笔数',
+  `refund_count` int(10) DEFAULT NULL COMMENT '退款笔数',
+  `deposit_count` int(10) DEFAULT NULL COMMENT '提现笔数',
+  `create_time` datetime DEFAULT NULL COMMENT '创建时间',
+  `update_time` datetime DEFAULT NULL COMMENT '修改时间',
+  `sale_amount` decimal(16,2) DEFAULT NULL COMMENT '购买支付金额',
+  `sale_count` int(6) DEFAULT NULL COMMENT '购买总笔数',
+  `version` int(11) DEFAULT 1 COMMENT '版本号',
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `USER_ID_UNIQUE` (`user_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='账号表';
+
+
+	
+
+CREATE TABLE `t_account_detail` (
+  `id` bigint(20) NOT NULL AUTO_INCREMENT COMMENT '账户明细ID',
+  `account_id` bigint(20) NOT NULL COMMENT '账户ID',
+  `user_id` bigint(20) NOT NULL COMMENT '用户ID',
+  `account_detail_no` varchar(64) NOT NULL COMMENT '资金明细编号',
+  `currency_type` char(1) DEFAULT NULL COMMENT '货币类型 1人民币 2通宝 3T币',
+  `from_type` varchar(2) DEFAULT NULL COMMENT '来源类型  1充值 2赠送 3回收 4出租; 10仲裁扣除 11支付消费 12提现',
+  `order_no` varchar(64) DEFAULT NULL COMMENT '订单号:我们自己的订单号',
+  `game_id` bigint(20) DEFAULT NULL COMMENT '游戏id',
+  `detail_amount` decimal(16,2) DEFAULT NULL COMMENT '交易金额',
+  `income_expend` char(1) DEFAULT NULL COMMENT '进账/出账：1支出 2收入',
+  `create_time` datetime DEFAULT NULL COMMENT '创建时间',
+  `update_time` datetime DEFAULT NULL COMMENT '修改时间',
+  `remark` varchar(255) DEFAULT NULL COMMENT '描述',
+  `del_flag` char(1) DEFAULT '0' COMMENT '显示状态 0 正常 1 删除',
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='账号流水';
