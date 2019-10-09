@@ -1,0 +1,10 @@
+
+range(范围索引)  常出现在 日期 和 in条件
+	1. 用 between 'start参数' and 'end参数' 与 >= 'start参数' and <= 'end参数' 2种区别不大。
+	2. 如果范围的结果记录 与全表的记录 的 17%以上（1/5），则范围索引失效
+	
+	这时需要带上 一定会出现的参数，建立索引
+	
+	如： t_order 的条件是 create_time, order_type, order_form ; 还有可能出现的条件	buyer_phone, seller_phone, end_time
+	解答： 必须建立 idx_create_time_order_type_order_form 3个字段组成的组合索引
+	

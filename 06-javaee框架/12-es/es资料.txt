@@ -1,0 +1,53 @@
+
+https://www.cnblogs.com/xuwujing/p/8998168.html  与spring-data-elasticsearch集成的示例
+
+https://www.cnblogs.com/ginb/p/8716485.html  esclient实现
+
+官网 https://www.elastic.co/guide/en/elasticsearch/reference/6.2/indices-put-mapping.html
+
+ElasticSearch7.x「新特性」
+https://blog.csdn.net/deaidai/article/details/90523059
+
+笔记专题
+	https://blog.csdn.net/sym542569199/article/category/8533803
+
+
+关键字解析
+	index相同，type不同，存相同字段如user_name，最终在Lucene中的处理方式是一样的，即es解析为同一个字段
+	index
+	type
+	id
+
+
+查看创建的index， 地址:端口/index值
+http://es-cn-0pp0mls4v000hvwwy.elasticsearch.aliyuncs.com:9200/test_book
+
+
+官网
+	BulkProcessor用法  https://www.elastic.co/guide/en/elasticsearch/client/java-rest/current/java-rest-high-document-bulk.html
+	
+	
+最新核心类型如下
+	字符串类型 text、keyword
+	数字类型  long, integer, short, byte, double, float, half_float, scaled_float
+	
+	日期类型  date
+	布尔类型  boolean
+	
+	二进制类型(一般只用于存储)  binary
+	
+	支持范围的类型
+		integer_range, float_range, long_range, double_range, date_range
+		
+	基本类型的数组或集合 type值与基本类型一样，即es 默认支持插入数组类型的值
+
+
+删除index
+https://blog.csdn.net/dream_flying_bj/article/details/73204761
+https://blog.csdn.net/c_zyer/article/details/77719998
+
+
+es优化
+	1、5.0以后number类型改为block k-d tree索引，对于低cardinality(基数)的number类型字段性能差（status一类不同值不多，每个值对应的文档比较多的情况下，查询会比较缓慢。）
+		改用keyword字段来索引就快了
+	2、	 

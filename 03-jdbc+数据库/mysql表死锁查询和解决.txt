@@ -5,3 +5,11 @@ show OPEN TABLES where In_use > 0;
 show processlist;
 
 kill id值;  -- 如 kill 123;
+
+
+SELECT a.user, COUNT(id) 
+FROM information_schema.processlist a
+GROUP BY a.user;
+
+SELECT * from information_schema.processlist
+WHERE user = 'xubei' and time > 1000;

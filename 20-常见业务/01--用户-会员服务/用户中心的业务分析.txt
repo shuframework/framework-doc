@@ -1,0 +1,27 @@
+
+用户中心服务  +  公共服务  ==>   login-web 服务（单点登录等）
+
+
+1、用户注册
+	初始化用户账户 只有新增账号和查询账号接口，修改维护部分在结算或交易中心
+
+2、用户登录（第三方授权用户）
+	
+3、用户属性（用户关联、黑名单等）
+
+5、用户登录日志
+
+CREATE TABLE `t_user_oper` (
+  `ID` bigint(16) NOT NULL AUTO_INCREMENT,
+  `ip` varchar(32) DEFAULT NULL COMMENT 'ip地址',
+  `LOGIN_TIME` timestamp NULL DEFAULT NULL COMMENT '登录时间',
+  `REGISTER_TIME` timestamp NULL DEFAULT NULL COMMENT '注册时间',
+  `USER_ID` bigint(16) DEFAULT NULL COMMENT '用户id',
+  `remark` varchar(255) DEFAULT NULL COMMENT '备注',
+  `ALOGIN_KEY` varchar(32) DEFAULT NULL COMMENT '登录时的临时密码',
+  `login_ways` varchar(32) DEFAULT NULL COMMENT '登陆方式(app:手机应用)',
+  `referer` varchar(256) DEFAULT NULL COMMENT '请求来源',
+  PRIMARY KEY (`ID`),
+  KEY `IDX_USER_ID_LOGIN_TIME` (`USER_ID`,`LOGIN_TIME`),
+  KEY `LOGIN_TIME` (`LOGIN_TIME`)
+) ENGINE=InnoDB AUTO_INCREMENT=19611425 DEFAULT CHARSET=utf8 COMMENT='用户表操作';

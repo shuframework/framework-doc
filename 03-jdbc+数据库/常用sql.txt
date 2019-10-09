@@ -27,6 +27,12 @@ alter table advert change content `img_size` char(1) DEFAULT NULL COMMENT '图�
 alter table advert add `content_type` char(1) DEFAULT NULL COMMENT '类型 1文章 2外链 3邀请好友 4春节活动 5游戏详情 6游戏合辑';
 
 
+-- 添加索引
+
+ALTER  TABLE  `order_game_1907`  ADD  INDEX  IDX_GOODS_ID_BUYER_ID (`good_id`,`buyer_id`);
+
+
+
 -- 根据不同状态值 进行排序
 例子：状态1在前，且状态1（进行中） 按操作时间 升序，状态2（已完成）按操作时间 降序
 select *

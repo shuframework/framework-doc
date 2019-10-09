@@ -1,0 +1,8 @@
+
+BeanCurrentlyInCreationException异常
+Bean with name 'remoteProcessServiceImpl' has been injected into other beans [orderLeaseRightImpl] in its raw version as part of a circular reference, but has eventually been wrapped. This means that said other beans do not use the final version of the bean. This is often the result of over-eager type matching - consider using 'getBeanNamesOfType' with the 'allowEagerInit' flag turned off, for example.
+
+@Async异步注解导致 循环依赖 
+
+解决方案 和原理
+https://cloud.tencent.com/developer/article/1497689
