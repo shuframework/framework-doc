@@ -51,3 +51,6 @@ es优化
 	1、5.0以后number类型改为block k-d tree索引，对于低cardinality(基数)的number类型字段性能差（status一类不同值不多，每个值对应的文档比较多的情况下，查询会比较缓慢。）
 		改用keyword字段来索引就快了
 	2、	 
+	
+	
+es5.0 会自动优化 text类型，有可能进行了分词，如果用 term可能导致查不到，应该使用 match

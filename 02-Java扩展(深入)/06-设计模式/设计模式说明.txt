@@ -27,48 +27,71 @@
 	多线程设计模式
 	架构模式
 	
-========== 各模式本质 ==========
 	
-简单工厂 simple factory
-	选择实现（在工厂类里）
+	
+========== 各模式本质 ==========
 
-工厂方法 factory method
-	延迟到子类来选择实现
-
-抽象工厂 abstract factory
-	选择产品簇的实现
-
-单例模式 singleton
+创建型 5个
+singleton(单例模式)
 	控制实例数量
 	懒汉式：是一种典型的时间换空间的方案（多了判断，但缓存了数据）
 	饿汉式：是一种典型的空间换时间的方案（一开始就加载）
 
-生成器(建造)模式 builder
+简单工厂(不是23种内的模式)
+	选择实现（在工厂类里）
+FactoryMethod(工厂方法模式)
+	延迟到子类来选择实现
+AbstractFactory(抽象工厂模式)
+	选择产品簇的实现
+	
+builder(建造者/生成器模式)
 	分离整体构建算法和部件构造
 
-原型模式 prototype
+prototype(原型/克隆模式)
 	克隆生成对象
 
 
-
-外观模式 facade
+结构型 7个
+facade(外观/门面模式)
 	封装交互，简化调用
 
-适配器模式	adapter
+adapter(适配模式)
 	转换匹配，复用功能
-
-
-
-
-
-
-
 	
-	
-	
+proxy(代理模式)
+
+composite(组合/混合模式)
+
+flyweight(享元模式)
+
+decorator(装饰模式)
+
+bridge(桥接模式)
 
 
-	
+
+行为型 11个
+mediator(中介者模式)
+
+observer(观察者模式)
+
+command(命令模式)
+
+iterator(迭代器模式)
+
+template(模板方法模式)
+
+strategy(策略模式)
+
+state(状态模式)
+
+memento(备忘录模式)
+
+interpreter(解释器模式)
+
+chain of responsibility(责任链模式)
+
+visitor(访问者模式)
 
 
 
