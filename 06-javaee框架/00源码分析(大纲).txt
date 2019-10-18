@@ -1,0 +1,27 @@
+
+核心技术
+1.  Spring IOC AOP MVC源码阅读技巧
+2.  HashMap底层实现与源码分析
+3.  Redis/Jedis通讯详解与源码分析
+4.  Dubbo RPC通讯原理与源码分析
+5.  Zookeeper选举源码分析
+6.  RocketMq消息中间件源码详解
+   
+7.  Mybatis快速开始
+8.  Mybatis工作原理
+9.  Mybatis源码分析
+10.Mybatis源码中的设计模式
+ 
+11. 开发中快速排查bug方式
+12. 调试bug的新技能新技巧
+13. Spring源码如何阅读
+14. Spring源码分析
+15. HashMap底层实现原理是什么？
+16. HashMap是线程安全的吗？
+17. JDK8和JDK7对HashMap差异在哪儿？
+18. 如果让你来设计HashMap思路是什么？
+19. Redis/Jedis源码阅读技巧
+20. Zookeeper源码阅读技巧
+21. RocketMq源码阅读技巧
+22. Sharding-shpere源码阅读技巧
+23. Dubbo源码阅读技巧
