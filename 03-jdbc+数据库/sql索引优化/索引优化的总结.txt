@@ -8,3 +8,5 @@ range(范围索引)  常出现在 日期 和 in条件
 	如： t_order 的条件是 create_time, order_type, order_form ; 还有可能出现的条件	buyer_phone, seller_phone, end_time
 	解答： 必须建立 idx_create_time_order_type_order_form 3个字段组成的组合索引
 	
+	
+max() 操作 更换为 order by xx desc limit 1; 注意这里的 xx 可能需要与条件组合，则需要建立组合索引	

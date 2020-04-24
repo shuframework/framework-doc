@@ -1,0 +1,12 @@
+
+按钮颜色属性7种，对应的class分别是：
+
+	白色：btn
+	浅蓝色：btn btn-primary
+	深蓝色：btn btn-info
+	绿色：btn btn-success
+	黄色：btn btn-warning
+	红色：btn btn-danger
+	黑色：btn btn-inverse
+	
+==============================	

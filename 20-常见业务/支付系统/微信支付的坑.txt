@@ -1,0 +1,31 @@
+
+微信APP支付的坑
+	1、拉起支付后返回的sign 是需要根据响应的数据组装的map，进行重新签名
+	2、 第一次拉起成功，第二次之后无法调起，返回-1
+		原因是应用签名设置不对，修改后立即生效。但是如果之前拉起过错误的签名，则需要清除微信的缓存（全部数据）或卸载微信重新安装
+		设置界面在【开放平台】中的栏目【管理中心 / 修改应用 / 修改开发信息】里面
+	
+	3、微信退款查询
+		四选一的参数，不能传多个，有key 值是空也不行，不然会提示 not exists
+		
+		
+	
+2.在统一下单，解析返回来的结果我出现了商户号mch_id与appid不匹配这个问题
+
+<xml>
+<return_code><![CDATA[FAIL]]></return_code>
+<return_msg><![CDATA[商户号mch_id与appid不匹配]]></return_msg>
+</xml>
+
+原因是我拿到的商户号不是这个公众号的。一定要检查是不是这个公众号的商户号。
+
+ 
+
+3.在统一下单，解析返回来的结果出现 appid and openid not match，appid和openid不匹配。
+
+<xml>
+<return_code><![CDATA[FAIL]]></return_code>
+<return_msg><![CDATA[appid and openid not match]]></return_msg>
+</xml>
+
+原因是我这个用户的openid 不是这个公众号的	

@@ -40,6 +40,19 @@ http://es-cn-0pp0mls4v000hvwwy.elasticsearch.aliyuncs.com:9200/test_book
 		integer_range, float_range, long_range, double_range, date_range
 		
 	基本类型的数组或集合 type值与基本类型一样，即es 默认支持插入数组类型的值
+	
+	
+查询操作
+	term	类似于==，但会存在分词，大写都会转成小写，导致查询不到结果
+	terms   类似于in，必须是keyword 类型	
+	
+	match
+	match_phrase  	模糊搜索like, 类型是 text
+	
+	match_phrase 实现or, 类型是 text
+	
+	
+	
 
 
 删除index

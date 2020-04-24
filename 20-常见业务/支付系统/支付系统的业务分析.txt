@@ -1,0 +1,29 @@
+
+支付中心服务	设法将支付回调的实现 剥离出去
+
+接入的第三方：支付宝，微信，各个银行
+
+
+1、发起支付
+	不同的支付方式
+
+2、支付回调
+	区分不同的第三方，一个第三方对应一个回调
+
+
+trade_type
+	app		手机APP支付
+	scan	扫二维码支付
+	wap		wap(h5)支付
+	jssdk	公众号支付
+	applet	小程序支付
+	
+	query	统一查询
+	refund	退款
+	
+	trans	转账
+	
+	
+微信：JSAPI--JSAPI支付（或小程序支付）、NATIVE--Native支付、APP--app支付，MWEB--H5支付，不同trade_type决定了调起支付的方式
+
+不同支付方式，回调地址 填写同一个，

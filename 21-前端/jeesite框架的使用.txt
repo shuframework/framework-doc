@@ -1,0 +1,4 @@
+
+列表的操作 
+	自行实现限制
+actions.push('<a href="#" onclick="post_events(\'${ctx}/rule/moduleInfo/updateStatus?status=1&guid='+row.guid+'\')" >放行</a>&nbsp;');

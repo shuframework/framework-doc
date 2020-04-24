@@ -1,15 +1,72 @@
 
-基本常见的工具类 在其他位置（framework）
+## 基本常见的工具类 在其他位置（framework）
+	
+lang
+	SystemUtil 判空和主键id
+	StringUtil
+	ConvertUtil 类型转换
+	DateUtil 含日期转换(DateFormatUtil)
+	BigDecimalUtil
+	RandomUtil
+	FileUtil 文件  IoUtil 流  ZipUtil 压缩
+	
+	ReflectUtil  ClassUtil  BeanUtil
+	
+collections
+	ArrayUtil  
+	CollectUtil 集合
+	
+第三方jar 
+	json、http、poi、加密、mail、xml
+	
 
-发送短信：接入第三方的api即可，如阿里云短信
+## 发送短信：接入第三方的api即可，如阿里云短信
 	1、一分价钱一分货，品质与价格永远是呈相关性的。平台从通信运营商那里拿到的价格都差不多。如果您发现有人说单条发送低于2分，那您就要提高警惕了，报价比成本线还低，这不可能的，多测试几个号码，到达率肯定达不到你想要的标准。
 	2、该平台要求您将款项转至个人账号，无论对方以何种说辞，都需要注意
 
-消息推送：极光消息推送
+	发送短信的步骤分析：
+	1、获取图片验证码
+		response 返回图片，接口返回验证码值，且缓存用于校验。
+	2、校验图片验证码
+		phone  vcode 2个参数，校验vcode的值
+	3、发送短信
+		在1min 内发送的请求，返回缓存的验证码
+		sms_code表	
 
-全局配置：读取配置，一般只加载一次。
+	注册/登录时 phone code 2个参数，校验code的值，记录错误次数，发送验证码时清空错误次数
+	
+	
 
-图片上传：oss
+## 消息推送：极光消息推送
 
-图形校验
+
+
+
+
+## 全局配置：读取配置，一般只加载一次。
+
+
+
+
+## 图片上传：oss
+
+
+
+##图形校验
+
+
 授权功能
+
+
+## 日志拦截
+
+	/**
+     * 注册MVC日志出入参切面
+     * @return
+     */
+    @Bean
+    @ConditionalOnProperty(prefix = "server.mvc.print", name = "enabled", matchIfMissing = true)
+    public LogAroundAop logAroundAop(){
+        return new LogAroundAop();
+    }
+

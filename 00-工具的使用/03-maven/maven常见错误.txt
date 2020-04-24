@@ -1,0 +1,21 @@
+
+## springboot中maven加入本地jar
+
+pom的配置
+	<dependency>
+		<groupId>com.taobao.top</groupId>
+		<artifactId>top-api-sdk-dev</artifactId>
+		<version>dingtalk-SNAPSHOT</version>
+		<scope>system</scope>
+		<systemPath>${pom.basedir}/lib/taobao-sdk-java-auto_1479188381469-20180926.jar</systemPath>
+	</dependency>
+	
+	这里还需要配置
+	<plugin>
+		<groupId>org.springframework.boot</groupId>
+		<artifactId>spring-boot-maven-plugin</artifactId>
+		<configuration>
+			<includeSystemScope>true</includeSystemScope>
+		</configuration>
+	</plugin>
+	
